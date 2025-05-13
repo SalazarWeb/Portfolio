@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-light dark:bg-dark text-dark dark:text-light transition-colors duration-300;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn {
+    @apply inline-flex items-center px-4 py-2 rounded-md font-medium transition-colors duration-300;
+  }
+  
+  .btn-primary {
+    @apply btn bg-primary hover:bg-primary/90 text-white;
+  }
+  
+  .section {
+    @apply py-16 md:py-24;
+  }
+} 

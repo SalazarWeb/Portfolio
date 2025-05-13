@@ -1,0 +1,84 @@
+---
+// About.astro - Sección sobre mí
+---
+
+<section id="about" class="section bg-gray-50 dark:bg-gray-900">
+  <div class="container">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Sobre Mí</h2>
+      <div class="w-20 h-1 bg-primary mx-auto"></div>
+    </div>
+    
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="relative">
+        <div class="absolute -top-4 -left-4 w-24 h-24 bg-primary/20 rounded-lg -z-10"></div>
+        <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/20 rounded-lg -z-10"></div>
+        <img 
+          src="/public/images/profile.jpg" 
+          alt="Tu Nombre - Foto de perfil" 
+          class="w-full max-w-md mx-auto rounded-lg shadow-lg"
+        />
+      </div>
+      
+      <div class="space-y-6">
+        <h3 class="text-2xl font-bold text-primary">Tu Nombre</h3>
+        <h4 class="text-xl text-gray-700 dark:text-gray-300">Desarrollador Web Full Stack</h4>
+        
+        <p class="text-gray-700 dark:text-gray-300">
+          Soy un desarrollador apasionado por crear soluciones digitales que combinan tecnología de vanguardia con diseño intuitivo. 
+          Con experiencia en desarrollo web full stack, me especializo en crear aplicaciones web escalables y performantes.
+        </p>
+        
+        <p class="text-gray-700 dark:text-gray-300">
+          Mi enfoque se centra en la calidad del código, la experiencia del usuario y la resolución eficaz de problemas. 
+          Me mantengo constantemente actualizado con las últimas tecnologías y mejores prácticas del desarrollo web.
+        </p>
+        
+        <div class="grid grid-cols-2 gap-4 pt-4">
+          <div>
+            <h5 class="font-bold mb-2">Información Personal</h5>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="font-medium mr-2">Ubicación:</span> 
+                <span class="text-gray-700 dark:text-gray-300">Tu Ciudad, País</span>
+              </li>
+              <li class="flex items-start">
+                <span class="font-medium mr-2">Idiomas:</span> 
+                <span class="text-gray-700 dark:text-gray-300">Español (Nativo), Inglés (Avanzado)</span>
+              </li>
+              <li class="flex items-start">
+                <span class="font-medium mr-2">Disponible para:</span> 
+                <span class="text-gray-700 dark:text-gray-300">Proyectos Freelance, Tiempo Completo</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="font-bold mb-2">Intereses</h5>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <span class="text-gray-700 dark:text-gray-300">Desarrollo Web</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-gray-700 dark:text-gray-300">UX/UI Design</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-gray-700 dark:text-gray-300">Nuevas Tecnologías</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-gray-700 dark:text-gray-300">Open Source</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <a
+          href="/cv.pdf"
+          download
+          class="btn-primary inline-block mt-4"
+        >
+          Descargar CV
+        </a>
+      </div>
+    </div>
+  </div>
+</section> 

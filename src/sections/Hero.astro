@@ -1,0 +1,47 @@
+---
+// Hero.astro - Sección principal de presentación
+---
+
+<section id="home" class="section pt-32 min-h-screen flex items-center">
+  <div class="container grid md:grid-cols-2 gap-8 items-center">
+    <div class="space-y-6">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+        Hola, soy <span class="text-primary">Tu Nombre</span>
+      </h1>
+      <h2 class="text-2xl md:text-3xl text-gray-600 dark:text-gray-400">
+        Desarrollador Web Full Stack
+      </h2>
+      <p class="text-lg text-gray-700 dark:text-gray-300 max-w-xl">
+        Especializado en crear experiencias digitales excepcionales. 
+        Transformo ideas en aplicaciones web modernas, funcionales y atractivas.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#contact" class="btn-primary">Contáctame</a>
+        <a href="#projects" class="btn bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700">
+          Ver proyectos
+        </a>
+      </div>
+      <div class="flex gap-4 pt-4">
+        <a href="https://github.com/tu-usuario" target="_blank" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
+          <span class="sr-only">GitHub</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+        </a>
+        <a href="https://linkedin.com/in/tu-usuario" target="_blank" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
+          <span class="sr-only">LinkedIn</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </a>
+        <a href="https://twitter.com/tu-usuario" target="_blank" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
+          <span class="sr-only">Twitter</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hidden md:block">
+      <img 
+        src="/public/images/hero-image.svg" 
+        alt="Ilustración de desarrollador" 
+        class="w-full max-w-md mx-auto"
+      />
+    </div>
+  </div>
+</section> 

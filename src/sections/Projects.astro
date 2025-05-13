@@ -1,0 +1,102 @@
+---
+// Projects.astro - Sección de proyectos destacados
+
+const projects = [
+  {
+    title: "E-commerce App",
+    description: "Plataforma de comercio electrónico con carrito de compras, gestión de usuarios y sistema de pagos.",
+    image: "/public/images/projects/project1.jpg",
+    tags: ["React", "Node.js", "MongoDB", "Stripe"],
+    liveUrl: "https://myecommerce.example.com",
+    githubUrl: "https://github.com/tu-usuario/ecommerce"
+  },
+  {
+    title: "Dashboard Analytics",
+    description: "Panel de control para visualización de datos analíticos con gráficas interactivas y exportación de informes.",
+    image: "/public/images/projects/project2.jpg",
+    tags: ["Vue.js", "Express", "PostgreSQL", "Chart.js"],
+    liveUrl: "https://dashboard.example.com",
+    githubUrl: "https://github.com/tu-usuario/dashboard"
+  },
+  {
+    title: "Task Manager App",
+    description: "Aplicación de gestión de tareas con características de organización, etiquetas y notificaciones.",
+    image: "/public/images/projects/project3.jpg",
+    tags: ["React", "Firebase", "Tailwind CSS"],
+    liveUrl: "https://taskapp.example.com",
+    githubUrl: "https://github.com/tu-usuario/taskapp"
+  },
+  {
+    title: "Portfolio Website",
+    description: "Sitio web personal para mostrar proyectos y habilidades de desarrollo.",
+    image: "/public/images/projects/project4.jpg",
+    tags: ["Astro", "Tailwind CSS", "TypeScript"],
+    liveUrl: "https://portfolio.example.com",
+    githubUrl: "https://github.com/tu-usuario/portfolio"
+  }
+];
+---
+
+<section id="projects" class="section">
+  <div class="container">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Mis Proyectos</h2>
+      <div class="w-20 h-1 bg-primary mx-auto"></div>
+      <p class="text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mt-6">
+        Una selección de mis proyectos recientes. Cada uno demuestra diferentes habilidades y tecnologías que he aprendido.
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map(project => (
+        <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="h-48 overflow-hidden">
+            <img 
+              src={project.image} 
+              alt={`${project.title} - Imagen del proyecto`}
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">{project.title}</h3>
+            <p class="text-gray-700 dark:text-gray-300 mb-4">{project.description}</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              {project.tags.map(tag => (
+                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <div class="flex justify-between">
+              <a 
+                href={project.liveUrl} 
+                target="_blank" 
+                class="text-primary hover:underline font-medium"
+              >
+                Ver Demo
+              </a>
+              <a 
+                href={project.githubUrl} 
+                target="_blank" 
+                class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary"
+              >
+                <span class="sr-only">GitHub</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="text-center mt-12">
+      <a 
+        href="https://github.com/tu-usuario" 
+        target="_blank"
+        class="btn-primary"
+      >
+        Ver más proyectos en GitHub
+      </a>
+    </div>
+  </div>
+</section> 
