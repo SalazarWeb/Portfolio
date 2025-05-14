@@ -1,63 +1,159 @@
 ---
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
-import ThemeToggle from "./ThemeToggle.astro";
 
 const menuItems = [
-  { title: "Sobre mí", path: "#about" },
-  { title: "Proyectos", path: "#projects" },
-  { title: "Habilidades", path: "#skills" },
-  { title: "Contacto", path: "#contact" },
+  { title: "About me", path: "#about" },
+  { title: "Projects", path: "#projects" },
+  { title: "Contact", path: "#contact" },
 ];
 ---
 
-<header class="fixed w-full top-0 left-0 z-50 bg-light/90 dark:bg-dark/90 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
+<header class="fixed w-full top-0 left-0 z-50 bg-white/90 backdrop-blur-sm border-b border-border">
   <div class="container mx-auto">
     <Astronav>
-      <div class="flex justify-between items-center h-16">
-        <a href="#home" class="text-2xl font-bold text-primary">
+      <div class="flex justify-between items-center h-16 px-4">
+        <a href="#home" class="text-2xl font-bold text-accent-primary">
           Portfolio
         </a>
-        <div class="flex items-center gap-4">
-          <ThemeToggle />
-          <div class="block lg:hidden">
-            <MenuIcon class="w-6 h-6 text-gray-800 dark:text-white" />
-          </div>
-        </div>
+        
+        {/* Menú de escritorio */}
         <nav class="hidden lg:flex items-center space-x-8">
           {
             menuItems.map((item) => (
               <a
                 href={item.path}
-                class="text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary font-medium transition-colors duration-300"
+                class="text-text-secondary hover:text-accent-primary font-medium transition-colors duration-300"
               >
                 {item.title}
               </a>
             ))
           }
-          <button class="btn-primary">Descargar CV</button>
+          <a
+            href="/cv.pdf"
+            download
+            class="px-6 py-2 bg-accent-primary text-white rounded-full hover:bg-accent-secondary transition-colors duration-300 shadow-button hover:shadow-lg"
+          >
+            Download CV
+          </a>
         </nav>
+
+        {/* Botón de menú móvil */}
+        <div class="lg:hidden">
+          <button
+            id="menu-toggle"
+            class="p-2 rounded-lg hover:bg-background-secondary transition-colors duration-300 flex items-center justify-center"
+            aria-label="Toggle menu"
+          >
+            <svg 
+              id="menu-icon"
+              class="w-6 h-6 text-text-primary"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path 
+                class="menu-open"
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                stroke-width="2" 
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+              <path 
+                class="menu-close hidden"
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                stroke-width="2" 
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
-      <div class="relative">
-        <MenuItems class="lg:hidden absolute top-4 right-0 left-0 bg-white dark:bg-dark-900 p-4 rounded-md shadow-lg border border-gray-200 dark:border-gray-800 z-50">
-          <ul class="flex flex-col space-y-4">
+
+      {/* Menú móvil */}
+      <div id="mobile-menu" class="lg:hidden">
+        <div class="fixed top-16 right-4 w-64 bg-background-card rounded-lg shadow-card border border-border transform scale-0 opacity-0 transition-all duration-300 origin-top-right">
+          <nav class="py-2">
             {
               menuItems.map((item) => (
-                <li>
-                  <a
-                    href={item.path}
-                    class="text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary font-medium transition-colors duration-300"
-                  >
-                    {item.title}
-                  </a>
-                </li>
+                <a
+                  href={item.path}
+                  class="block px-4 py-2 text-text-secondary hover:text-accent-primary hover:bg-background-secondary font-medium transition-colors duration-300"
+                >
+                  {item.title}
+                </a>
               ))
             }
-            <li>
-              <button class="btn-primary w-full">Descargar CV</button>
-            </li>
-          </ul>
-        </MenuItems>
+            <div class="px-4 py-2 border-t border-border mt-2">
+              <a
+                href="/cv.pdf"
+                download
+                class="block w-full px-4 py-2 bg-accent-primary text-white text-center rounded-full hover:bg-accent-secondary transition-colors duration-300 shadow-button hover:shadow-lg"
+              >
+                Download CV
+              </a>
+            </div>
+          </nav>
+        </div>
       </div>
     </Astronav>
   </div>
-</header> 
+</header>
+
+<script>
+  function setupMobileMenu() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu')?.firstElementChild;
+    const menuOpenIcon = document.querySelector('.menu-open');
+    const menuCloseIcon = document.querySelector('.menu-close');
+    let isMenuOpen = false;
+
+    function toggleMenu() {
+      isMenuOpen = !isMenuOpen;
+      
+      if (isMenuOpen) {
+        mobileMenu?.classList.remove('scale-0', 'opacity-0');
+        mobileMenu?.classList.add('scale-100', 'opacity-100');
+        menuOpenIcon?.classList.add('hidden');
+        menuCloseIcon?.classList.remove('hidden');
+      } else {
+        mobileMenu?.classList.add('scale-0', 'opacity-0');
+        mobileMenu?.classList.remove('scale-100', 'opacity-100');
+        menuOpenIcon?.classList.remove('hidden');
+        menuCloseIcon?.classList.add('hidden');
+      }
+    }
+
+    // Agregar event listener al botón
+    menuToggle?.addEventListener('click', toggleMenu);
+
+    // Cerrar menú al hacer click en un enlace
+    const menuLinks = document.querySelectorAll('#mobile-menu a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (isMenuOpen) toggleMenu();
+      });
+    });
+
+    // Cerrar menú al hacer click fuera
+    document.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      if (isMenuOpen && !target.closest('#mobile-menu') && !target.closest('#menu-toggle')) {
+        toggleMenu();
+      }
+    });
+  }
+
+  // Configurar el menú cuando se carga la página
+  setupMobileMenu();
+
+  // Reconfigurar el menú cuando se navega entre páginas (para Astro View Transitions)
+  document.addEventListener('astro:page-load', setupMobileMenu);
+</script>
+
+<style>
+  /* Asegurar que el menú móvil esté por encima de otros elementos */
+  #mobile-menu {
+    z-index: 1000;
+  }
+</style> 

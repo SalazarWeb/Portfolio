@@ -10,13 +10,13 @@ interface Props {
 
 const { 
   title, 
-  description = "Portafolio profesional de desarrollo web", 
+  description = "Professional web development portfolio", 
   image = "/images/og-image.jpg" 
 } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -37,21 +37,8 @@ const {
         }
       }}
     />
-    
-    <!-- Script para el modo oscuro -->
-    <script is:inline>
-      if (
-        localStorage.getItem('color-theme') === 'dark' ||
-        (!('color-theme' in localStorage) &&
-          window.matchMedia('(prefers-color-scheme: dark)').matches)
-      ) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    </script>
   </head>
-  <body>
+  <body class="bg-background text-text-primary antialiased">
     <slot />
   </body>
 </html> 

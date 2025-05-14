@@ -9,11 +9,15 @@
   }
   
   body {
-    @apply bg-light dark:bg-dark text-dark dark:text-light transition-colors duration-300;
+    @apply bg-background text-text-primary;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold;
+    @apply text-accent-primary font-bold;
+  }
+
+  a {
+    @apply text-accent-secondary hover:text-accent-primary transition-colors duration-300;
   }
 }
 
@@ -23,14 +27,78 @@
   }
   
   .btn {
-    @apply inline-flex items-center px-4 py-2 rounded-md font-medium transition-colors duration-300;
+    @apply inline-flex items-center px-4 py-2 rounded-md font-medium transition-all duration-300;
   }
   
   .btn-primary {
-    @apply btn bg-primary hover:bg-primary/90 text-white;
+    @apply btn bg-accent-primary hover:bg-accent-primary/90 text-background;
+  }
+
+  .btn-secondary {
+    @apply btn bg-accent-secondary hover:bg-accent-secondary/90 text-background;
   }
   
   .section {
     @apply py-16 md:py-24;
+  }
+
+  .card {
+    @apply bg-background-secondary border border-border rounded-lg p-6 transition-shadow hover:shadow-glow;
+  }
+
+  .badge {
+    @apply px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-primary {
+    @apply badge bg-accent-primary/10 text-accent-primary;
+  }
+
+  .badge-secondary {
+    @apply badge bg-accent-secondary/10 text-accent-secondary;
+  }
+
+  .stats-number {
+    @apply text-accent-tertiary text-4xl font-bold;
+  }
+
+  .stats-label {
+    @apply text-text-secondary text-sm;
+  }
+
+  .hero-title {
+    @apply text-accent-primary text-5xl md:text-6xl font-bold;
+  }
+
+  .hero-subtitle {
+    @apply text-text-secondary text-xl md:text-2xl;
+  }
+
+  .avatar-border {
+    @apply border-4 border-accent-secondary rounded-full;
+  }
+
+  .project-card {
+    @apply card hover:shadow-glow;
+  }
+
+  .project-title {
+    @apply text-accent-primary text-xl font-bold mb-2;
+  }
+
+  .project-description {
+    @apply text-text-primary mb-4;
+  }
+
+  .tech-badge {
+    @apply badge-secondary mr-2 mb-2;
+  }
+
+  .footer {
+    @apply bg-background-secondary text-text-secondary py-12;
+  }
+
+  .footer-link {
+    @apply text-accent-secondary hover:text-accent-primary;
   }
 } 
