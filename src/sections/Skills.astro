@@ -1,23 +1,242 @@
-<section id="skills" class="section bg-background-secondary dark:bg-background-dark-secondary">
+---
+const skills = [
+  // Fila 1
+  { name: 'HTML5', icon: '/icons/html.svg' },
+  { name: 'CSS3', icon: '/icons/css.svg' },
+  { name: 'JavaScript', icon: '/icons/javascript.svg' },
+  { name: 'TypeScript', icon: '/icons/typescript.svg' },
+  //Fila 2
+  { name: 'React', icon: '/icons/react.svg' },
+  { name: 'Next.js', icon: '/icons/nextjs.svg' },
+  { name: 'Astro', icon: '/icons/astro.svg' },
+  { name: 'Node.js', icon: '/icons/nodejs.svg' },
+  //Fila 3
+  { name: 'Tailwind CSS', icon: '/icons/tailwind.svg' },
+  { name: 'Bootstrap', icon: '/icons/bootstrap.svg' },
+  { name: 'Git', icon: '/icons/git.svg' },
+  { name: 'MongoDB', icon: '/icons/mongodb.svg' },
+];
+
+const tools = [
+  'VS Code',
+  'Vite',
+  'GitHub',
+  'Vercel',
+];
+
+const knowledge = [
+  'Responsive Design',
+  'Clean Code',
+  'SCRUM',
+];
+---
+
+<section id="skills" class="section bg-background dark:bg-background-dark py-16">
   <div class="container">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Technologies that I master</h2>
+    <!-- Fila superior: título, línea y texto -->
+    <div class="mb-10 w-full">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Skills</h2>
+      <div class="w-20 h-1 bg-primary mb-6"></div>
+      <h2 class="text-2xl text-gray-700 dark:text-gray-300 text-primary flex gap-2 mb-6">
+        <img src="/icons/technology.svg" alt="Tools Icon" class="w-10 h-10" />
+        Technologies
+      </h2>
     </div>
-    
-    <div class="mt-16 text-center">
-      <div class="flex flex-wrap justify-center gap-3">
-        <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full shadow-md text-gray-700 dark:text-gray-300">HTML5</span>
-        <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full shadow-md text-gray-700 dark:text-gray-300">CSS3</span>
-        <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full shadow-md text-gray-700 dark:text-gray-300">JavaScript</span>
-        <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full shadow-md text-gray-700 dark:text-gray-300">TypeScript</span>
-        <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full shadow-md text-gray-700 dark:text-gray-300">Tailwind</span>
-        <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full shadow-md text-gray-700 dark:text-gray-300">Bootstrap</span>
-        <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full shadow-md text-gray-700 dark:text-gray-300">React</span>
-        <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full shadow-md text-gray-700 dark:text-gray-300">Astro</span>
-        <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full shadow-md text-gray-700 dark:text-gray-300">Next.js</span>
-        <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full shadow-md text-gray-700 dark:text-gray-300">Node.js</span>
-        <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full shadow-md text-gray-700 dark:text-gray-300">MongoDB</span>
+    <!-- Fila inferior: iconos, espacio, tools, knowledge, espacio -->
+    <div class="flex flex-col md:flex-row w-full md:items-start">
+      <!-- Skills: 50% -->
+      <div class="w-full md:w-[50%]">
+        <div class="grid grid-cols-4 gap-2 md:gap-3">
+          {skills.map((skill) => (
+            <div class="skill-item">
+              <div class="skill-circle group">
+                <img src={skill.icon} alt={skill.name} class="skill-icon" />
+                <span class="skill-name">{skill.name}</span>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
+      <!-- Espacio en blanco central: 10% -->
+      <div class="hidden md:block md:w-[10%]"></div>
+      <!-- Tools: 20% -->
+      <div class="w-full md:w-[20%] flex flex-col tools-knowledge-block-col self-start md:mt-0">
+        <h3 class="text-2xl text-gray-700 dark:text-gray-300 font-semibold mb-3 text-primary flex items-center gap-2 justify-center md:justify-start">
+          <img src="/icons/tools.svg" alt="Tools Icon" class="w-10 h-10" />
+          Tools
+        </h3>
+        <ul class="tools-list-col">
+          {tools.map(tool => (
+            <li class="flex items-center gap-2">
+              <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              {tool}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <!-- Knowledge: 20% -->
+      <div class="w-full md:w-[20%] flex flex-col tools-knowledge-block-col self-start md:mt-0">
+        <h3 class="text-2xl text-gray-700 dark:text-gray-300 font-semibold mb-3 text-primary flex items-center gap-2 justify-center md:justify-start">
+          <img src="/icons/light.svg" alt="Knowledge Icon" class="w-10 h-10" />
+          Knowledge
+        </h3>
+        <ul class="knowledge-list-col">
+          {knowledge.map(item => (
+            <li class="flex items-center gap-2">
+              <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <!-- Espacio en blanco derecho: 10% -->
+      <div class="hidden md:block md:w-[10%]"></div>
     </div>
   </div>
-</section> 
+</section>
+
+<style>
+  .skill-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .skill-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .dark .skill-circle {
+    background: #2d3748;
+  }
+  
+  .skill-circle:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.13);
+  }
+  
+  .skill-icon {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+    position: relative;
+  }
+  
+  .skill-name {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #374151;
+    text-align: center;
+    background: rgba(255,255,255,0.95);
+    border-radius: 0.5rem;
+    padding: 0.2rem 0.7rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 2;
+    pointer-events: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  }
+  
+  .dark .skill-name {
+    color: #e2e8f0;
+    background: rgba(45,55,72,0.97);
+  }
+  
+  .skill-circle:hover .skill-name {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .tools-knowledge-block-col {
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    margin-bottom: 0.5rem;
+    min-width: 0;
+  }
+  .dark .tools-knowledge-block-col {
+    background: none;
+  }
+  .tools-list-col, .knowledge-list-col {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  .tools-list-col li, .knowledge-list-col li {
+    font-size: 1rem;
+    color: #374151;
+    background: transparent;
+    border-radius: 0.5rem;
+    padding: 0.1rem 0.2rem;
+    font-weight: 500;
+    transition: background 0.2s;
+    width: 100%;
+    text-align: left;
+  }
+  .dark .tools-list-col li, .dark .knowledge-list-col li {
+    color: #e2e8f0;
+    background: transparent;
+  }
+  .tools-list-col li:hover, .knowledge-list-col li:hover {
+    background: #f3f4f6;
+  }
+  .dark .tools-list-col li:hover, .dark .knowledge-list-col li:hover {
+    background: #2d3748;
+  }
+  @media (max-width: 1024px) {
+    .w-2\/5, .md\:w-2\/5 {
+      width: 100%;
+      max-width: 100%;
+    }
+    .w-3\/5, .md\:w-3\/5 {
+      width: 100%;
+      max-width: 100%;
+    }
+    .flex-col.md\:flex-row {
+      flex-direction: column;
+    }
+    .tools-knowledge-block-col {
+      min-width: 0;
+    }
+  }
+  @media (max-width: 768px) {
+    .grid-cols-4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .skill-circle {
+      width: 60px;
+      height: 60px;
+    }
+    .tools-knowledge-block-col {
+      padding: 0;
+    }
+    .flex-col.md\:flex-row {
+      flex-direction: column;
+    }
+  }
+</style> 

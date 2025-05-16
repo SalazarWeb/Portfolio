@@ -9,32 +9,19 @@
       <div class="w-20 h-1 bg-primary mx-auto"></div>
     </div>
     
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-      <div class="relative">
-        <div class="absolute -top-4 -left-4 w-24 h-24 bg-primary/20 rounded-lg -z-10"></div>
-        <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/20 rounded-lg -z-10"></div>
-        <img 
-          src="/src/assets/images/Desktop_Image.png" 
-          alt="Foto de perfil" 
-          class="w-full max-w-md mx-auto rounded-lg shadow-lg"
-        />
-      </div>
-      
-      <div class="space-y-6">
-        <h3 class="text-2xl font-bold text-primary">David Daniel Salazar Jiménez</h3>
-        <h4 class="text-xl text-gray-700 dark:text-gray-300">Front-End Web Developer</h4>
-        
-        <p class="text-gray-700 dark:text-gray-300">
-          I'm a developer passionate about creating digital solutions that combine cutting-edge technology with intuitive design. <br>
-          With +3 years of experience in front-end web development, I specialize in building scalable, responsive, and high-performance web applications.
-        </p>
-        
-        <p class="text-gray-700 dark:text-gray-300">
-          My focus is on code quality, user experience, effective problem-solving, and even more so, on progressing every day to become a better programmer and a better person.
-        </p>
-        
-        <div class="grid grid-cols-2 gap-4 pt-4">
-          <div>
+    <div class="grid md:grid-cols-2 gap-12 items-start">
+      <div class="flex flex-col gap-6">
+        <div class="relative">
+          <div class="absolute -top-4 -left-4 w-24 h-24 bg-primary/20 rounded-lg -z-10"></div>
+          <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/20 rounded-lg -z-10"></div>
+          <img 
+            src="/images/Desktop_Image.png" 
+            alt="Foto de perfil" 
+            class="w-full max-w-md mx-auto rounded-lg shadow-lg"
+          />
+        </div>
+        <div class="flex flex-col gap-4 hidden md:flex">
+          <div class="border rounded-lg p-4 shadow-lg">
             <h5 class="font-bold mb-2">Personal Information</h5>
             <ul class="space-y-2">
               <li class="flex items-start">
@@ -47,30 +34,41 @@
               </li>
               <li class="flex items-start">
                 <span class="font-medium mr-2">Available:</span> 
-                <span class="text-gray-700 dark:text-gray-300">Freelance Projects, Part-time/Full-time</span>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h5 class="font-bold mb-2">Interests</h5>
-            <ul class="space-y-2">
-              <li class="flex items-start">
-                <span class="text-gray-700 dark:text-gray-300">Web Development</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-gray-700 dark:text-gray-300">UX/UI Design</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-gray-700 dark:text-gray-300">New Technologies</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-gray-700 dark:text-gray-300">Open Source</span>
+                <span class="text-gray-700 dark:text-gray-300">Freelance Projects, Part-time / Full-time</span>
               </li>
             </ul>
           </div>
         </div>
-        
-        
+      </div>
+      <div class="space-y-6">
+        <h3 class="text-2xl font-bold text-primary">David Daniel Salazar Jiménez</h3>
+        <p class="text-gray-700 dark:text-gray-300">
+          I'm a developer passionate about creating digital solutions that combine cutting-edge technology with intuitive design. <br>
+          With +3 years of experience in front-end web development, I specialize in building scalable, responsive, and high-performance web applications.
+        </p>
+        <p class="text-gray-700 dark:text-gray-300">
+          My focus is on code quality, user experience, effective problem-solving, and even more so, on progressing every day to become a better programmer and a better person.
+        </p>
+        <!-- Aquí puedes añadir más texto si lo deseas -->
+      </div>
+    </div>
+    <div class="flex flex-col gap-4 mt-8 md:hidden">
+      <div class="border rounded-lg p-4 shadow-lg">
+        <h5 class="font-bold mb-2">Personal Information</h5>
+        <ul class="space-y-2">
+          <li class="flex items-start">
+            <span class="font-medium mr-2">Location:</span> 
+            <span class="text-gray-700 dark:text-gray-300">La Habana, Cuba</span>
+          </li>
+          <li class="flex items-start">
+            <span class="font-medium mr-2">Languages:</span> 
+            <span class="text-gray-700 dark:text-gray-300">Spanish (Native), English (B1 - Intermediate)</span>
+          </li>
+          <li class="flex items-start">
+            <span class="font-medium mr-2">Available:</span> 
+            <span class="text-gray-700 dark:text-gray-300">Freelance Projects, Part-time / Full-time</span>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
