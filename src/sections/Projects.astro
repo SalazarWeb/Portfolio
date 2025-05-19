@@ -3,36 +3,25 @@
 
 const projects = [
   {
-    title: "E-commerce App",
-    description: "Plataforma de comercio electrónico con carrito de compras, gestión de usuarios y sistema de pagos.",
-    image: "/public/images/projects/project1.jpg",
-    tags: ["React", "Node.js", "MongoDB", "Stripe"],
-    liveUrl: "https://myecommerce.example.com",
-    githubUrl: "https://github.com/tu-usuario/ecommerce"
-  },
-  {
-    title: "Dashboard Analytics",
-    description: "Panel de control para visualización de datos analíticos con gráficas interactivas y exportación de informes.",
-    image: "/public/images/projects/project2.jpg",
-    tags: ["Vue.js", "Express", "PostgreSQL", "Chart.js"],
-    liveUrl: "https://dashboard.example.com",
+    title: "Marketplace",
+    description: "Minimalist platform with integrated shopping cart, user management, and an appointment scheduling system.",
+    image: "/public/images/alonso.png",
+    tags: ["React", "Node.js", "MongoDB"],
     githubUrl: "https://github.com/tu-usuario/dashboard"
   },
   {
-    title: "Task Manager App",
-    description: "Aplicación de gestión de tareas con características de organización, etiquetas y notificaciones.",
-    image: "/public/images/projects/project3.jpg",
-    tags: ["React", "Firebase", "Tailwind CSS"],
-    liveUrl: "https://taskapp.example.com",
-    githubUrl: "https://github.com/tu-usuario/taskapp"
+    title: "Pictasino",
+    description: "Virtual casino with live matches, games of chance, and online payments included.",
+    image: "/public/images/pictasino.png",
+    tags: ["Next.js", "TypeScript", "Tailwind"],
+    githubUrl: "https://github.com/tu-usuario/dashboard"
   },
   {
-    title: "Portfolio Website",
-    description: "Sitio web personal para mostrar proyectos y habilidades de desarrollo.",
-    image: "/public/images/projects/project4.jpg",
-    tags: ["Astro", "Tailwind CSS", "TypeScript"],
-    liveUrl: "https://portfolio.example.com",
-    githubUrl: "https://github.com/tu-usuario/portfolio"
+    title: "Tic Tac Toe",
+    description: "Classic tic-tac-toe game with victory animations and a scoreboard.",
+    image: "/public/images/tictactoe.png",
+    tags: ["HTML", "CSS", "JavaScript"],
+    githubUrl: "https://github.com/tu-usuario/taskapp"
   }
 ];
 ---
@@ -50,11 +39,11 @@ const projects = [
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {projects.map(project => (
         <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <div class="h-48 overflow-hidden">
+          <div class="group h-48 overflow-hidden transition-all duration-500 hover:h-80">
             <img 
               src={project.image} 
               alt={`${project.title} - Imagen del proyecto`}
-              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+              class="w-full h-full object-cover transition-all duration-500 group-hover:object-contain group-hover:scale-110"
             />
           </div>
           <div class="p-6">
