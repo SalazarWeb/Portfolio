@@ -4,22 +4,33 @@
 const projects = [
   {
     title: "Marketplace",
+    subtitle: "client",
     description: "Minimalist platform with integrated shopping cart, user management, and an appointment scheduling system.",
-    image: "/public/images/alonso.png",
+    image: "/images/alonso.png",
     tags: ["React", "Node.js", "MongoDB"],
     githubUrl: "https://github.com/tu-usuario/dashboard"
   },
   {
     title: "Pictasino",
+    subtitle: "client",
     description: "Virtual casino with live matches, games of chance, and online payments included.",
-    image: "/public/images/pictasino.png",
+    image: "/images/pictasino.png",
     tags: ["Next.js", "TypeScript", "Tailwind"],
     githubUrl: "https://github.com/tu-usuario/dashboard"
   },
   {
     title: "Tic Tac Toe",
+    subtitle1: "own",
     description: "Classic tic-tac-toe game with victory animations and a scoreboard.",
-    image: "/public/images/tictactoe.png",
+    image: "/images/tictactoe.png",
+    tags: ["HTML", "CSS", "JavaScript"],
+    githubUrl: "https://github.com/tu-usuario/taskapp"
+  },
+  {
+    title: "Movies Selection",
+    subtitle1: "own",
+    description: "A movie page developed for my university to facilitate access to them from the campus.",
+    image: "/images/peliculas-desktop.png",
     tags: ["HTML", "CSS", "JavaScript"],
     githubUrl: "https://github.com/tu-usuario/taskapp"
   }
@@ -47,7 +58,11 @@ const projects = [
             />
           </div>
           <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">{project.title}</h3>
+            <div class="flex items-baseline gap-2 mb-2">
+              <h3 class="text-xl font-bold">{project.title}</h3>
+              <span class="text-sm text-red-400">{project.subtitle}</span>
+              <span class="text-sm text-green-400">{project.subtitle1}</span>
+            </div>
             <p class="text-gray-700 dark:text-gray-300 mb-4">{project.description}</p>
             <div class="flex flex-wrap gap-2 mb-6">
               {project.tags.map(tag => (
