@@ -1,34 +1,26 @@
-<section id="home" class="section min-h-screen flex flex-col justify-center items-center bg-background dark:bg-background-dark text-center">
-  <div class="space-y-6 max-w-2xl w-full flex flex-col items-center">
-    <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">
+<section id="home" class="section min-h-screen flex flex-col justify-between items-center bg-background dark:bg-background-dark text-center">
+    
+  <div class="top-32 left-32 absolute hero-stars-container">
+      <div class="night">
+        <div class="star"></div>
+        <div class="star"></div>  
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>     
+      </div>
+  </div>
+  <div class="flex flex-col items-center w-full max-w-2xl mt-[10vh] relative z-10">
+    <h1 class="text-4xl md:text-5xl font-bold text-primary mb-[10vh]">
       Turning Vision Into Reality
     </h1>
-    <div class="roles-wrapper">
-      <div class="roles-container">
-        <div class="roles">
-          <span class="role">Front-End Developer</span>
-          <span class="role">UI/UX Enthusiast</span>
-          <span class="role">Problem Solver</span>
-          <span class="role">Code Craftsman</span>
-          <span class="role-separator"></span>
-        </div>
-        <div class="roles" aria-hidden="true">
-          <span class="role">Front-End Developer</span>
-          <span class="role">UI/UX Enthusiast</span>
-          <span class="role">Problem Solver</span>
-          <span class="role">Code Craftsman</span>
-          <span class="role-separator"></span>
-        </div>
-      </div>
-    </div>
-    <div class="problem-solution-text animate-fade-in space-y-4 max-w-xl">
+    <div class="problem-solution-text animate-fade-in space-y-4 max-w-xl mb-[4vh]">
       <p>
           ⚠️ Is your web application constantly experiencing errors?<br>
           Are you losing money 💸 and customers? <br>      
-        I develop systems with <span class="uptime-highlight">99.9% uptime</span> ✨
+        I develop systems with <span class="uptime-highlight">99% uptime</span> ✨
       </p>
     </div>
-    <div class="flex flex-wrap gap-4 justify-center">
+    <div class="flex flex-wrap gap-4 justify-center mb-[8vh]">
       <a href="#contact" class="btn-primary transform hover:scale-105 transition-transform duration-300 pulse-animation">
         Let's talk
       </a>
@@ -36,7 +28,7 @@
         Explore My Work
       </a>
     </div>
-    <div class="flex gap-4 pt-4 justify-center">
+    <div class="flex gap-4 justify-center mb-[5vh]">
       <a href="https://github.com/SalazarWeb" target="_blank" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
         <span class="sr-only">GitHub</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M16 22.027v-2.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7a5.44 5.44 0 0 0-1.5-3.75a5.07 5.07 0 0 0-.09-3.77s-1.18-.35-3.91 1.48a13.4 13.4 0 0 0-7 0c-2.73-1.83-3.91-1.48-3.91-1.48A5.07 5.07 0 0 0 5 5.797a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7a3.37 3.37 0 0 0-.94 2.58v2.87"/><path d="M9 20.027c-3 .973-5.5 0-7-3"/></g></svg>
@@ -51,14 +43,53 @@
       </a>
     </div>
   </div>
+  
+  <div class="roles-wrapper mt-[10vh] mb-auto relative z-10">
+    <div class="roles-container">
+      <div class="roles">
+        <span class="role">Front-End Developer</span>
+        <span class="role">UI/UX Enthusiast</span>
+        <span class="role">Problem Solver</span>
+        <span class="role">Clean Code</span>
+        <span class="role">AI Explorer</span>
+        <span class="role">Continuous Learner</span>
+        <span class="role">APIs Integrator</span>
+
+        <!-- duplicate the roles for scrolling effect -->
+        <span class="role">Front-End Developer</span>
+        <span class="role">UI/UX Enthusiast</span>
+        <span class="role">Problem Solver</span>
+        <span class="role">Clean Code</span>
+        <span class="role">AI Explorer</span>
+        <span class="role">Continuous Learner</span>
+        <span class="role">APIs Integrator</span>
+      </div>
+    </div>
+  </div>
+  
 </section>
 
 <style>
+  /* Estilos originales */
+  // ...existing code...
+
+  /* Añadimos estilos para que el fondo de estrellas solo se muestre en el Hero */
+  .hero-stars-container {
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Hacer que los elementos sean visibles sobre el fondo */
+  section {
+    position: relative;
+  }
+
+  /* El resto de estilos existentes */
   .roles-wrapper {
     position: relative;
-    width: 500px;
-    height: 50px;
-    margin: 0 auto;
+    width: 100%;
+    height: 60px;
+    margin: 0;
     overflow: hidden;
     background: linear-gradient(90deg, 
       transparent 0%, 
@@ -66,6 +97,7 @@
       rgba(var(--color-background), 1) 98%,
       transparent 100%
     );
+    margin-bottom: 10px;
   }
 
   .roles-container {
@@ -75,28 +107,36 @@
 
   .roles {
     display: flex;
-    gap: 3rem;
+    gap: 2.5rem;
     animation: scroll 20s linear infinite;
     align-items: center;
   }
 
   .role {
     white-space: nowrap;
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-weight: 600;
     color: var(--color-gray-600);
-    padding: 0.5rem 0;
+    padding: 0.5rem 1.5rem;
+    background-color: rgba(var(--color-primary), 0.1);
+    border-radius: 9999px;
     flex-shrink: 0;
+    border: 1px solid rgba(var(--color-primary), 0.2);
+    min-width: 120px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
   }
 
-  .role-separator {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-    font-weight: 700;
-    color: rgba(var(--color-primary), 0.5);
-    padding: 0.5rem 0;
-    opacity: 0.6;
+  .role:hover {
+    background-color: rgba(var(--color-primary), 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-color: rgba(var(--color-primary), 0.4);
   }
 
   @media (prefers-color-scheme: dark) {
@@ -109,7 +149,9 @@
       );
     }
     .role {
-      color: var(--color-gray-400);
+      color: var(--color-gray-300);
+      background-color: rgba(var(--color-primary), 0.1);
+      border: 1px solid rgba(var(--color-primary), 0.3);
     }
   }
 
@@ -118,13 +160,8 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-100%);
+      transform: translateX(-50%);
     }
-  }
-
-  .typewriter {
-    overflow: hidden;
-    border-right: .15em solid transparent;
   }
 
   .pulse-animation {
@@ -152,46 +189,11 @@
     100% { opacity: 1; transform: translateY(0); }
   }
 
-  .problem-highlight {
-    position: relative;
-    display: inline-block;
-    padding: 0.5rem;
-    background: linear-gradient(120deg, rgba(var(--color-primary), 0.1) 0%, rgba(var(--color-primary), 0.1) 100%);
-    background-repeat: no-repeat;
-    background-size: 100% 0.4em;
-    background-position: 0 88%;
-    transition: all 0.3s ease;
-  }
-
-  .problem-highlight:hover {
-    background-size: 100% 100%;
-  }
-
-  .solution-text {
-    background: linear-gradient(120deg, var(--color-primary) 0%, #4F46E5 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-  }
-
   .uptime-highlight {
     position: relative;
     color: #22C55E;
     font-weight: 800;
     text-shadow: 0 0 10px rgba(34, 197, 94, 0.3);
-  }
-
-  @keyframes pulse-border {
-    0% {
-      box-shadow: 0 0 0 0 rgba(var(--color-primary), 0.4);
-    }
-    70% {
-      box-shadow: 0 0 0 10px rgba(var(--color-primary), 0);
-    }
-    100% {
-      box-shadow: 0 0 0 0 rgba(var(--color-primary), 0);
-    }
   }
 </style>
 

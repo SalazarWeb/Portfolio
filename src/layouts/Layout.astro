@@ -35,8 +35,9 @@ const {
     <meta name="generator" content={Astro.generator} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="/styles/shootingStar.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <meta name="description" content="Portafolio profesional de David Salazar, desarrollador web especializado en front-end y tecnologías modernas." />
+    <meta name="description" content="Portafolio profesional de David Salazar." />
     <meta name="keywords" content="portafolio, desarrollador web, front-end, tecnologías modernas, David Salazar" />
     <meta name="author" content="David Salazar" />
     
@@ -59,7 +60,57 @@ const {
       gtag();
     </script>
   </head>
-  <body class="bg-background text-text-primary antialiased">
+  <body class="bg-background text-text-primary antialiased relative">
     <slot />
+    <script>
+      // Google Analytics
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+      gtag();
+      gtag();
+      
+      // Script para ocultar las estrellas al hacer scroll
+      document.addEventListener('DOMContentLoaded', function() {
+        const heroStarsContainer = document.querySelector('.hero-stars-container') as HTMLElement;
+        if (heroStarsContainer) {
+          window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            const homeElement = document.getElementById('home');
+            if (homeElement) {
+              const heroHeight = homeElement.offsetHeight;
+              
+              // Si el scroll es mayor que la altura de la sección Hero, ocultamos las estrellas
+              if (scrollPosition > heroHeight * 0.8) {
+                heroStarsContainer.style.opacity = '0';
+                heroStarsContainer.style.transition = 'opacity 0.5s ease-out';
+              } else {
+                // Si volvemos arriba, mostramos las estrellas nuevamente
+                heroStarsContainer.style.opacity = '1';
+                heroStarsContainer.style.transition = 'opacity 0.5s ease-in';
+              }
+            }
+          });
+        }
+      });
+    </script>
+
+    <style is:global>
+      /* Para modo oscuro */
+      .dark .animated-bg {
+        background: linear-gradient(
+          45deg,
+          rgba(99, 102, 241, 0.08),
+          rgba(168, 85, 247, 0.08),
+          rgba(59, 130, 246, 0.08),
+          rgba(6, 182, 212, 0.08)
+        );
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .animated-bg {
+          display: none !important;
+        }
+      }
+    </style>
   </body>
 </html>
