@@ -28,13 +28,13 @@ const menuItems = [
               </a>
             ))
           }
-          <!-- <a
+          <a
             href="/cv.pdf"
             download
             class="px-6 py-2 bg-accent-primary text-white rounded-full hover:bg-accent-secondary transition-colors duration-300 shadow-button hover:shadow-lg"
           >
             Download CV
-          </a> -->
+          </a>
         </nav>
 
         <div class="lg:hidden">
@@ -82,7 +82,7 @@ const menuItems = [
                 </a>
               ))
             }
-            <!-- <div class="px-4 py-2 border-t border-border mt-2">
+            <div class="px-4 py-2 border-t border-border mt-2">
               <a
                 href="/cv.pdf"
                 download
@@ -90,7 +90,7 @@ const menuItems = [
               >
                 Download CV
               </a>
-            </div> -->
+            </div>
           </nav>
         </div>
       </div>
@@ -122,10 +122,8 @@ const menuItems = [
       }
     }
 
-    // Agregar event listener al botón
     menuToggle?.addEventListener('click', toggleMenu);
 
-    // Cerrar menú al hacer click en un enlace
     const menuLinks = document.querySelectorAll('#mobile-menu a');
     menuLinks.forEach(link => {
       link.addEventListener('click', () => {
@@ -133,7 +131,6 @@ const menuItems = [
       });
     });
 
-    // Cerrar menú al hacer click fuera
     document.addEventListener('click', (e) => {
       const target = e.target as HTMLElement;
       if (isMenuOpen && !target.closest('#mobile-menu') && !target.closest('#menu-toggle')) {
@@ -142,15 +139,12 @@ const menuItems = [
     });
   }
 
-  // Configurar el menú cuando se carga la página
   setupMobileMenu();
 
-  // Reconfigurar el menú cuando se navega entre páginas (para Astro View Transitions)
   document.addEventListener('astro:page-load', setupMobileMenu);
 </script>
 
 <style>
-  /* Asegurar que el menú móvil esté por encima de otros elementos */
   #mobile-menu {
     z-index: 1000;
   }

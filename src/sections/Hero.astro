@@ -1,17 +1,39 @@
 <section id="home" class="section min-h-screen flex flex-col justify-center items-center bg-background dark:bg-background-dark text-center">
   <div class="space-y-6 max-w-2xl w-full flex flex-col items-center">
-    <h2 class="text-3xl md:text-4xl text-gray-600 dark:text-gray-400 font-bold">
-      Front-End Web Developer
-    </h2> <br>
-    <p class="text-lg text-gray-700 dark:text-gray-300 max-w-xl">
-      With +3 years of experience in development,<br>
-      I specialize in creating exceptional digital experiences.<br>
-      I transform ideas into modern, functional, and engaging web applications.
-    </p>
+    <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">
+      Turning Vision Into Reality
+    </h1>
+    <div class="roles-wrapper">
+      <div class="roles-container">
+        <div class="roles">
+          <span class="role">Front-End Developer</span>
+          <span class="role">UI/UX Enthusiast</span>
+          <span class="role">Problem Solver</span>
+          <span class="role">Code Craftsman</span>
+          <span class="role-separator"></span>
+        </div>
+        <div class="roles" aria-hidden="true">
+          <span class="role">Front-End Developer</span>
+          <span class="role">UI/UX Enthusiast</span>
+          <span class="role">Problem Solver</span>
+          <span class="role">Code Craftsman</span>
+          <span class="role-separator"></span>
+        </div>
+      </div>
+    </div>
+    <div class="problem-solution-text animate-fade-in space-y-4 max-w-xl">
+      <p>
+          ⚠️ Is your web application constantly experiencing errors?<br>
+          Are you losing money 💸 and customers? <br>      
+        I develop systems with <span class="uptime-highlight">99.9% uptime</span> ✨
+      </p>
+    </div>
     <div class="flex flex-wrap gap-4 justify-center">
-      <a href="#contact" class="btn-primary">Let's do a project</a>
-      <a href="#projects" class="btn bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700">
-        See projects
+      <a href="#contact" class="btn-primary transform hover:scale-105 transition-transform duration-300 pulse-animation">
+        Let's talk
+      </a>
+      <a href="#projects" class="btn bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transform hover:scale-105 transition-transform duration-300">
+        Explore My Work
       </a>
     </div>
     <div class="flex gap-4 pt-4 justify-center">
@@ -30,3 +52,146 @@
     </div>
   </div>
 </section>
+
+<style>
+  .roles-wrapper {
+    position: relative;
+    width: 500px;
+    height: 50px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(var(--color-background), 1) 2%,
+      rgba(var(--color-background), 1) 98%,
+      transparent 100%
+    );
+  }
+
+  .roles-container {
+    display: flex;
+    width: fit-content;
+  }
+
+  .roles {
+    display: flex;
+    gap: 3rem;
+    animation: scroll 20s linear infinite;
+    align-items: center;
+  }
+
+  .role {
+    white-space: nowrap;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    color: var(--color-gray-600);
+    padding: 0.5rem 0;
+    flex-shrink: 0;
+  }
+
+  .role-separator {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    color: rgba(var(--color-primary), 0.5);
+    padding: 0.5rem 0;
+    opacity: 0.6;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .roles-wrapper {
+      background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(var(--color-background-dark), 1) 2%,
+        rgba(var(--color-background-dark), 1) 98%,
+        transparent 100%
+      );
+    }
+    .role {
+      color: var(--color-gray-400);
+    }
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .typewriter {
+    overflow: hidden;
+    border-right: .15em solid transparent;
+  }
+
+  .pulse-animation {
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(var(--color-primary), 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(var(--color-primary), 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(var(--color-primary), 0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease-in;
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  .problem-highlight {
+    position: relative;
+    display: inline-block;
+    padding: 0.5rem;
+    background: linear-gradient(120deg, rgba(var(--color-primary), 0.1) 0%, rgba(var(--color-primary), 0.1) 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.4em;
+    background-position: 0 88%;
+    transition: all 0.3s ease;
+  }
+
+  .problem-highlight:hover {
+    background-size: 100% 100%;
+  }
+
+  .solution-text {
+    background: linear-gradient(120deg, var(--color-primary) 0%, #4F46E5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+
+  .uptime-highlight {
+    position: relative;
+    color: #22C55E;
+    font-weight: 800;
+    text-shadow: 0 0 10px rgba(34, 197, 94, 0.3);
+  }
+
+  @keyframes pulse-border {
+    0% {
+      box-shadow: 0 0 0 0 rgba(var(--color-primary), 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(var(--color-primary), 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(var(--color-primary), 0);
+    }
+  }
+</style>
+
