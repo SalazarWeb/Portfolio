@@ -1,6 +1,17 @@
 ---
 import { SEO } from 'astro-seo';
+
 import '../styles/global.css';
+
+declare global {
+
+  interface Window {
+
+    dataLayer: any[];
+
+  }
+
+}
 
 interface Props {
   title: string;
@@ -25,6 +36,9 @@ const {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <meta name="description" content="Portafolio profesional de David Salazar, desarrollador web especializado en front-end y tecnologías modernas." />
+    <meta name="keywords" content="portafolio, desarrollador web, front-end, tecnologías modernas, David Salazar" />
+    <meta name="author" content="David Salazar" />
     
     <SEO
       title={title}
@@ -37,8 +51,15 @@ const {
         }
       }}
     />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+    <script>      
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+      gtag();
+      gtag();
+    </script>
   </head>
   <body class="bg-background text-text-primary antialiased">
     <slot />
   </body>
-</html> 
+</html>

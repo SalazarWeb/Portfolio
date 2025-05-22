@@ -8,7 +8,7 @@ const projects = [
     description: "Minimalist platform with integrated shopping cart, user management, and an appointment scheduling system.",
     image: "/images/alonso.png",
     tags: ["React", "Node.js", "MongoDB"],
-    githubUrl: "https://github.com/salazarweb"
+    githubUrl: "https://github.com/salazarweb/Alonso-web"
   },
   {
     title: "Pictasino",
@@ -16,7 +16,7 @@ const projects = [
     description: "Virtual casino with live matches, games of chance, and online payments included.",
     image: "/images/pictasino.png",
     tags: ["Next.js", "TypeScript", "Tailwind"],
-    githubUrl: "https://github.com/salazarweb"
+    githubUrl: "https://github.com/salazarweb/PICTASINO"
   },
   {
     title: "Tic Tac Toe",
@@ -24,7 +24,7 @@ const projects = [
     description: "Classic tic-tac-toe game with victory animations and a scoreboard.",
     image: "/images/tictactoe.png",
     tags: ["HTML", "CSS", "JavaScript"],
-    githubUrl: "https://github.com/salazarweb"
+    githubUrl: "https://github.com/salazarweb/Tic-Tac-Toe"
   },
   {
     title: "Movies Selection",
@@ -32,7 +32,7 @@ const projects = [
     description: "A movie page developed for my university to facilitate access to them from the campus.",
     image: "/images/peliculas-desktop.png",
     tags: ["HTML", "CSS", "JavaScript"],
-    githubUrl: "https://github.com/salazarweb"
+    githubUrl: "https://github.com/salazarweb/CatalogoPeliculas"
   }
 ];
 ---
@@ -53,7 +53,7 @@ const projects = [
           <div class="group h-48 overflow-hidden transition-all duration-500 hover:h-80">
             <img 
               src={project.image} 
-              alt={`${project.title} - Imagen del proyecto`}
+              alt={`Imagen del proyecto ${project.title}`} 
               class="w-full h-full object-cover transition-all duration-500 group-hover:object-contain group-hover:scale-110"
             />
           </div>
@@ -96,4 +96,4 @@ const projects = [
       </a>
     </div>
   </div>
-</section> 
+</section>

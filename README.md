@@ -1,47 +1,66 @@
-# Astro Starter Kit: Minimal
+# Portafolio Profesional de David Salazar
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Este es el repositorio de mi portafolio profesional como desarrollador web especializado en front-end. Aquí podrás encontrar información sobre mis habilidades, proyectos destacados y formas de contacto.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## 🚀 Tecnologías Utilizadas
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- **Framework**: [Astro](https://astro.build/)
+- **Estilos**: [Tailwind CSS](https://tailwindcss.com/)
+- **Integraciones**: Astro SEO, Astro Navbar
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+## 📂 Estructura del Proyecto
 
 ```text
 /
 ├── public/
+│   ├── icons/       # Iconos utilizados en el portafolio
+│   ├── images/      # Imágenes de proyectos y recursos
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/  # Componentes reutilizables
+│   ├── layouts/     # Layout principal
+│   ├── pages/       # Páginas principales
+│   ├── sections/    # Secciones del portafolio
+│   ├── styles/      # Estilos globales
+│   ├── utils/       # Utilidades (si aplica)
+├── astro.config.mjs # Configuración de Astro
+├── tailwind.config.mjs # Configuración de Tailwind CSS
+└── package.json     # Dependencias y scripts
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🛠️ Instalación y Uso
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+1. Clona este repositorio:
+   ```bash
+   git clone https://github.com/SalazarWeb/portfolio.git
+   ```
 
-Any static assets, like images, can be placed in the `public/` directory.
+2. Instala las dependencias:
+   ```bash
+   npm install
+   ```
 
-## 🧞 Commands
+3. Inicia el servidor de desarrollo:
+   ```bash
+   npm run dev
+   ```
 
-All commands are run from the root of the project, from a terminal:
+4. Abre tu navegador en `http://localhost:4321`.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 🌟 Capturas de Pantalla
 
-## 👀 Want to learn more?
+### Página Principal
+![Página Principal](public/images/alonso.png)
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Sección de Proyectos
+![Sección de Proyectos](public/images/pictasino.png)
+
+## 📧 Contacto
+
+Si tienes alguna pregunta o deseas colaborar, no dudes en contactarme:
+- **Email**: [davidsalazar.web@gmail.com](mailto:davidsalazar.web@gmail.com)
+- **LinkedIn**: [linkedin.com/in/salazarweb](https://linkedin.com/in/salazarweb)
+- **GitHub**: [github.com/SalazarWeb](https://github.com/SalazarWeb)
+
+---
+
+¡Gracias por visitar mi portafolio!

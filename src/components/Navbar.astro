@@ -17,7 +17,6 @@ const menuItems = [
           SalazarWeb
         </a>
         
-        {/* Menú de escritorio */}
         <nav class="hidden lg:flex items-center space-x-8">
           {
             menuItems.map((item) => (
@@ -29,16 +28,15 @@ const menuItems = [
               </a>
             ))
           }
-          <a
+          <!-- <a
             href="/cv.pdf"
             download
             class="px-6 py-2 bg-accent-primary text-white rounded-full hover:bg-accent-secondary transition-colors duration-300 shadow-button hover:shadow-lg"
           >
             Download CV
-          </a>
+          </a> -->
         </nav>
 
-        {/* Botón de menú móvil */}
         <div class="lg:hidden">
           <button
             id="menu-toggle"
@@ -71,7 +69,6 @@ const menuItems = [
         </div>
       </div>
 
-      {/* Menú móvil */}
       <div id="mobile-menu" class="lg:hidden">
         <div class="fixed top-16 right-4 w-64 bg-background-card rounded-lg shadow-card border border-border transform scale-0 opacity-0 transition-all duration-300 origin-top-right">
           <nav class="py-2">
@@ -85,7 +82,7 @@ const menuItems = [
                 </a>
               ))
             }
-            <div class="px-4 py-2 border-t border-border mt-2">
+            <!-- <div class="px-4 py-2 border-t border-border mt-2">
               <a
                 href="/cv.pdf"
                 download
@@ -93,7 +90,7 @@ const menuItems = [
               >
                 Download CV
               </a>
-            </div>
+            </div> -->
           </nav>
         </div>
       </div>
