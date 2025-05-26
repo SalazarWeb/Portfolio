@@ -26,13 +26,13 @@ const tools = [
 ];
 
 const knowledge = [
-  'Responsive Design',
-  'Clean Code',
+  'Responsive design',
+  'Clean code',
   'SCRUM',
 ];
 ---
 
-<section id="skills" class="section bg-background dark:bg-background-dark py-16">
+<section id="skills" class="section bg-background dark:bg-background-dark lg:ml-64 transition-all duration-300 py-16">
   <div class="container">
     <!-- Fila superior: título, línea y texto -->
     <div class="mb-10 w-full">
@@ -47,12 +47,12 @@ const knowledge = [
     <div class="flex flex-col md:flex-row w-full md:items-start">
       <!-- Skills: 50% -->
       <div class="w-full md:w-[50%]">
-        <div class="grid grid-cols-3 gap-2 md:gap-3">
+        <div class="grid grid-cols-3 gap-3 md:gap-4">
           {skills.map((skill) => (
             <div class="skill-item">
-              <div class="skill-circle group">
+              <div class="skill-oval">
+                <span class="skill-text">{skill.name}</span>
                 <img src={skill.icon} alt={skill.name} class="skill-icon" />
-                <span class="skill-name">{skill.name}</span>
               </div>
             </div>
           ))}
@@ -104,68 +104,61 @@ const knowledge = [
     margin-bottom: 0.5rem;
   }
   
-  .skill-circle {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background: white;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  .skill-oval {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    overflow: hidden;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    background: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    min-width: 3rem;
+    min-height: 3rem;
   }
   
-  .dark .skill-circle {
+  .dark .skill-oval {
     background: #2d3748;
   }
   
-  .skill-circle:hover {
+  .skill-oval:hover {
     transform: translateY(-4px) scale(1.05);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.13);
+    padding: 0.75rem;
+    width: 3rem;
+    height: 3rem;
   }
   
-  .skill-icon {
-    width: 60%;
-    height: 60%;
-    object-fit: contain;
-    z-index: 1;
-    transition: opacity 0.3s ease;
-    opacity: 1;
-    position: relative;
-  }
-  
-  .skill-name {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+  .skill-text {
     font-size: 0.85rem;
     font-weight: 500;
     color: #374151;
-    text-align: center;
-    background: rgba(255,255,255,0.95);
-    border-radius: 0.5rem;
-    padding: 0.2rem 0.7rem;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
-    z-index: 2;
-    pointer-events: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    position: relative;
+    z-index: 1;
+    transition: opacity 0.3s ease;
   }
   
-  .dark .skill-name {
+  .dark .skill-text {
     color: #e2e8f0;
-    background: rgba(45,55,72,0.97);
   }
   
-  .skill-circle:hover .skill-name {
+  .skill-oval:hover .skill-text {
+    opacity: 0;
+  }
+  
+  .skill-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+  }
+  
+  .skill-oval:hover .skill-icon {
     opacity: 1;
-    visibility: visible;
   }
   
   .tools-knowledge-block-col {
@@ -229,9 +222,8 @@ const knowledge = [
     .grid-cols-3 {
       grid-template-columns: repeat(3, 1fr);
     }
-    .skill-circle {
-      width: 55px;
-      height: 55px;
+    .skill-oval {
+      padding: 0.4rem 0.8rem;
     }
     .tools-knowledge-block-col {
       padding: 0;
@@ -242,9 +234,8 @@ const knowledge = [
   }
   
   @media (max-width: 480px) {
-    .skill-circle {
-      width: 45px;
-      height: 45px;
+    .skill-oval {
+      padding: 0.3rem 0.6rem;
     }
   }
 </style>

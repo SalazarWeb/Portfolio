@@ -2,13 +2,13 @@
 // Contact.astro - Sección de contacto
 ---
 
-<section id="contact" class="section bg-background-secondary dark:bg-background-dark-secondary">
+<section id="contact" class="section bg-background dark:bg-background-dark lg:ml-64 transition-all duration-300">
   <div class="container max-w-4xl mx-auto">
     <div class="text-center mb-16">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Contact</h2>
       <div class="w-20 h-1 bg-primary mx-auto"></div>
       <p class="text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mt-6">
-        Do you have a project in mind? I'd love to collaborate with you! Contact me using the form or using the following methods.
+        Do you have a project in mind? I'd love to collaborate with you! Contact me by WhatsApp or using the email.
       </p>
 
       <div class="flex flex-wrap gap-2 justify-center mb-[5vh] mt-[5vh]">    
@@ -19,43 +19,18 @@
       </div>
     </div>
     
-    <div class="grid md:grid-cols-5 gap-8">
-      <div class="md:col-span-2 space-y-6">
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Primera columna: Contact information y Social networks -->
+      <div class="space-y-6">
         <div>
-          <h3 class="font-bold text-lg mb-2">Contact Information</h3>
+          <h3 class="font-bold text-lg mb-2">Contact information</h3>
           <p class="text-gray-700 dark:text-gray-300">
-            I am available for freelance projects, remote work, or web development consultations.
+            I am available for freelance projects, remote work,<br> or web development consultations.
           </p>
         </div>
         
-        <div class="space-y-4">
-          <div class="flex items-start space-x-3">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail text-primary"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            <div>
-              <h4 class="font-medium">Email</h4>
-              <a href="mailto:davidsalazar.web@gmail.com" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">davidsalazar.web@gmail.com</a>
-            </div>
-          </div>
-          
-          <div class="flex items-start space-x-3">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin text-primary"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            <div>
-              <h4 class="font-medium">Location</h4>
-              <p class="text-gray-700 dark:text-gray-300">La Habana, Cuba</p>
-            </div>
-          </div>
-          
-          <div class="flex items-start space-x-3">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock text-primary"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            <div>
-              <h4 class="font-medium">Schedule Available</h4>
-              <p class="text-gray-700 dark:text-gray-300">Monday - Friday: 8:00 - 17:00</p>
-            </div>
-          </div>
-        </div>
-        
         <div class="pt-4">
-          <h3 class="font-bold text-lg mb-3">Social Networks</h3>
+          <h3 class="font-bold text-lg mb-3">Social networks</h3>
           <div class="flex space-x-4">
             <a href="https://github.com/SalazarWeb" target="_blank" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
               <span class="sr-only">GitHub</span>
@@ -63,10 +38,38 @@
             </a>
             <a href="https://linkedin.com/in/salazarweb" target="_blank" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
               <span class="sr-only">LinkedIn</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5 1.25a2.75 2.75 0 1 0 0 5.5a2.75 2.75 0 0 0 0-5.5M3.75 4a1.25 1.25 0 1 1 2.5 0a1.25 1.25 0 0 1-2.5 0m-1.5 4A.75.75 0 0 1 3 7.25h4a.75.75 0 0 1 .75.75v13a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75zm1.5.75v11.5h2.5V8.75zM9.25 8a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 .75.75v.434l.435-.187a7.8 7.8 0 0 1 2.358-.595C20.318 7.4 22.75 9.58 22.75 12.38V21a.75.75 0 0 1-.75.75h-4a.75.75 0 0 1-.75-.75v-7a1.25 1.25 0 0 0-2.5 0v7a.75.75 0 0 1-.75.75h-4a.75.75 0 0 1-.75-.75zm1.5.75v11.5h2.5V14a2.75 2.75 0 1 1 5.5 0v6.25h2.5v-7.87c0-1.904-1.661-3.408-3.57-3.234a6.3 6.3 0 0 0-1.904.48l-1.48.635a.75.75 0 0 1-1.046-.69V8.75z" clip-rule="evenodd"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5 1.25a2.75 2.75 0 1 0 0 5.5a2.75 2.75 0 0 0 0-5.5M3.75 4a1.25 1.25 0 1 1 2.5 0a1.25 1.25 0 0 1-2.5 0m-1.5 4A.75.75 0 0 1 3 7.25h4a.75.75 0 0 1 .75.75v13a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75zm1.5.75v11.5h2.5V8.75zM9.25 8a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 .75-.75v.434l.435-.187a7.8 7.8 0 0 1 2.358-.595C20.318 7.4 22.75 9.58 22.75 12.38V21a.75.75 0 0 1-.75.75h-4a.75.75 0 0 1-.75-.75v-7a1.25 1.25 0 0 0-2.5 0v7a.75.75 0 0 1-.75.75h-4a.75.75 0 0 1-.75-.75zm1.5.75v11.5h2.5V14a2.75 2.75 0 1 1 5.5 0v6.25h2.5v-7.87c0-1.904-1.661-3.408-3.57-3.234a6.3 6.3 0 0 0-1.904.48l-1.48.635a.75.75 0 0 1-1.046-.69V8.75z" clip-rule="evenodd"/></svg>
             </a>
           </div>
         </div>
       </div>
+
+      <!-- Segunda columna: Detalles de contacto -->
+      <div class="space-y-4">
+        <div class="flex items-start space-x-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail text-primary"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <div>
+            <h4 class="font-medium">Email</h4>
+            <a href="mailto:davidsalazar.web@gmail.com" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">davidsalazar.web@gmail.com</a>
+          </div>
+        </div>
+        
+        <div class="flex items-start space-x-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin text-primary"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <div>
+            <h4 class="font-medium">Location</h4>
+            <p class="text-gray-700 dark:text-gray-300">La Habana, Cuba</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start space-x-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock text-primary"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <div>
+            <h4 class="font-medium">Schedule available</h4>
+            <p class="text-gray-700 dark:text-gray-300">Monday - Friday: 8:00 - 17:00</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
