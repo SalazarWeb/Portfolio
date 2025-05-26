@@ -2,9 +2,9 @@
 import { Astronav } from "astro-navbar";
 
 const menuItems = [
-  { title: "About me", path: "#about" },
+  { title: "Experience", path: "#experience" },
   { title: "Skills", path: "#skills" },
-  { title: "Projects", path: "#projects" },
+  { title: "About me", path: "#about" },
   { title: "Contact", path: "#contact" },
 ];
 ---
@@ -22,16 +22,16 @@ const menuItems = [
             menuItems.map((item) => (
               <a
                 href={item.path}
-                class="text-text-secondary hover:text-accent-primary font-medium transition-colors duration-300"
+                class="text-text-secondary hover:text-accent-primary font-medium transition-colors duration-300 hover-metallic px-3 py-1 rounded-md"
               >
                 {item.title}
               </a>
             ))
           }
           <a
-            href="images/alonso.png"
+            href="src/assets/David_Salazar_CV.pdf"
             download
-            class="px-6 py-2 bg-accent-primary text-white rounded-full hover:bg-accent-secondary transition-colors duration-300 shadow-button hover:shadow-lg"
+            class="px-6 py-2 bg-accent-primary text-white rounded-full transition-all duration-300 shadow-button hover:shadow-lg hover:scale-105 hover-metallic"
           >
             Download CV
           </a>
@@ -76,7 +76,7 @@ const menuItems = [
               menuItems.map((item) => (
                 <a
                   href={item.path}
-                  class="block px-4 py-2 text-text-secondary hover:text-accent-primary hover:bg-background-secondary font-medium transition-colors duration-300"
+                  class="block px-4 py-2 text-text-secondary hover:text-accent-primary hover:bg-background-secondary font-medium transition-colors duration-300 hover-metallic"
                 >
                   {item.title}
                 </a>
@@ -86,7 +86,7 @@ const menuItems = [
               <a
                 href="/cv.pdf"
                 download
-                class="block w-full px-4 py-2 bg-accent-primary text-white text-center rounded-full hover:bg-accent-secondary transition-colors duration-300 shadow-button hover:shadow-lg"
+                class="block w-full px-4 py-2 bg-accent-primary text-white text-center rounded-full transition-all duration-300 shadow-button hover:shadow-lg hover:scale-105 hover-metallic"
               >
                 Download CV
               </a>
@@ -148,4 +148,4 @@ const menuItems = [
   #mobile-menu {
     z-index: 1000;
   }
-</style> 
+</style>
