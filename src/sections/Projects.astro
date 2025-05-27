@@ -1,80 +1,118 @@
 ---
 const experience = [
   {
-    title: "Marketplace",
-    subtitle: "private",
-    description: "Minimalist platform with integrated shopping cart, user management, and an appointment scheduling system.",
-    image: "/images/alonso.png",
-    tags: ["React", "Node.js", "MongoDB"],
-    githubUrl: "https://github.com/salazarweb/Alonso-web"
-  },
-  {
     title: "Pictasino",
     subtitle: "private",
-    description: "Virtual casino with live matches, games of chance, and online payments included.",
-    image: "/images/pictasino.png",
-    tags: ["Next.js", "TypeScript", "Tailwind"],
+    description: "Pictasino is an online casino and sports betting platform developed with Next.js and React. Featuring a modern design using Tailwind and custom UI components, the project is structured as a responsive web application with intuitive navigation, aimed at users over 18 years of age seeking gaming and betting entertainment.",
+    image: "/images/pictasino-desktop.png",
+    tags: ["CSS", "Tailwind", "TypeScript", "HTML", "Next.js", "Node.js", "Express", "MongoDB", "Git"],
     githubUrl: "https://github.com/salazarweb/PICTASINO"
   },
   {
-    title: "Tic Tac Toe",
+    title: "Tic tac toe",
     subtitle1: "public",
-    description: "Classic tic-tac-toe game with victory animations and a scoreboard.",
-    image: "/images/tictactoe.png",
-    tags: ["HTML", "CSS", "JavaScript"],
+    description: "Tic-Tac-Toe game that implements a fully functional version of the classic two-player game, including an interactive interface with a 3x3 board, automatic turn management between X and O, winner detection, a victory modal with confetti effects, and a modular architecture with separate components for the board.",
+    image: "/images/tictactoe-desktop.png",
+    tags: ["React", "CSS", "JavaScript", "HTML"],
     githubUrl: "https://github.com/salazarweb/Tic-Tac-Toe"
   },
   {
-    title: "Movies Selection",
+    title: "Marketplace",
     subtitle: "private",
-    description: "A movie page developed for my university to facilitate access to them from the campus.",
+    description: "A web application developed with React and Vite that showcases a home maintenance, repair, and air conditioning company. The project is structured with reusable components and uses React Router for navigation.",
+    image: "/images/alonso-desktop.png",
+    tags: ["Tailwind", "React", "HTML", "Git", "Node.js", "MongoDB", "Express"],
+    githubUrl: "https://github.com/salazarweb/Alonso-web"
+  },
+  {
+    title: "Movies selection",
+    subtitle: "private",
+    description: "Movie catalog developed with vanilla HTML, CSS, and JavaScript. It features a modern, responsive interface with movie viewing functionality. Includes GitHub Actions configuration for automatic deployment to GitHub Pages.",
     image: "/images/peliculas-desktop.png",
-    tags: ["HTML", "CSS", "JavaScript"],
+    tags: ["HTML", "CSS", "Git", "JavaScript"],
     githubUrl: "https://github.com/salazarweb/CatalogoPeliculas"
-  }
+  },
+  {
+    title: "Portfolio",
+    subtitle1: "public",
+    description: "A professional web portfolio developed with Astro and Tailwind showcases the skills and experience of a front-end developer. It features a responsive design, intuitive sidebar navigation, custom CSS animations, and SEO optimization. The modular code structure facilitates maintenance, while integration with tools like GitHub and WhatsApp allows for direct communication with potential clients.",
+    image: "/images/portfolio-desktop.png",
+    tags: ["Astro", "CSS", "Tailwind", "HTML", "Git"],
+    githubUrl: "https://github.com/salazarweb/Portfolio"
+  },
 ];
+
+const techIcons: Record<string, string> = {
+  "HTML": "icons/html.svg",
+  "CSS": "icons/css.svg",
+  "JavaScript": "icons/javascript.svg",
+  "TypeScript": "icons/typescript.svg",
+  "React": "icons/react.svg",
+  "Next.js": "icons/nextjs.svg",
+  "Astro": "icons/astro.svg",
+  "Node.js": "icons/nodejs.svg",
+  "Tailwind": "icons/tailwind.svg",
+  "Git": "icons/git.svg",
+  "MongoDB": "icons/mongodb.svg",
+  "Express": "icons/express.svg"
+};
 ---
 
-<section id="experience" class="section bg-background-secondary dark:bg-background-dark-secondary lg:ml-64 transition-all duration-300">
+<section id="experience" class="section bg-background-secondary lg:ml-64 transition-all duration-300">
   <div class="container">
     <div class="text-center mb-16">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Experience</h2>      
     </div>
     
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="flex flex-col gap-12">
       {experience.map(project => (
-        <div class="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 hover-metallic">
-          <div class="group h-48 overflow-hidden transition-all duration-500 hover:h-80">
-            <img 
-              src={project.image} 
-              alt={`Imagen del proyecto ${project.title}`} 
-              class="w-full h-full object-cover transition-all duration-500 group-hover:object-contain group-hover:scale-110"
-            />
-          </div>
-          <div class="p-6">
-            <div class="flex items-baseline gap-2 mb-2">
-              <h3 class="text-xl font-bold">{project.title}</h3>
-              <span class="text-sm text-red-400">{project.subtitle}</span>
-              <span class="text-sm text-green-400">{project.subtitle1}</span>
-            </div>
-            <p class="text-gray-700 dark:text-gray-300 mb-4">{project.description}</p>
-            <div class="flex flex-wrap gap-2 mb-6">
-              {project.tags.map(tag => (
-                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">
-                  {tag}
-                </span>
-              ))}
-            </div>
-            <div class="flex justify-between">
+        <div class="flex flex-col md:flex-row rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-[1.02] bg-white">
+          <!-- Contenido - En móvil va primero, en desktop va segundo -->
+          <div class="flex-1 p-6 order-2 md:order-2">
+            <!-- Título, subtítulo y GitHub en la misma línea -->
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-baseline gap-3">
+                <h3 class="text-xl font-bold">{project.title}</h3>
+                <span class="text-sm text-red-400">{project.subtitle}</span>
+                <span class="text-sm text-green-400">{project.subtitle1}</span>
+              </div>
+              
+              <!-- GitHub link - Alineado a la derecha -->
               <a 
                 href={project.githubUrl} 
                 target="_blank" 
-                class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary p-2 rounded-full hover-metallic"
+                class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary p-2 rounded-full transition-colors duration-300 flex-shrink-0"
               >
                 <span class="sr-only">GitHub</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
               </a>
             </div>
+            
+            <!-- Descripción -->
+            <p class="text-gray-700 dark:text-gray-300 mb-4">{project.description}</p>
+            
+            <!-- Tecnologías -->
+            <div class="flex flex-wrap gap-2 mb-6">
+              {project.tags.map(tag => (
+                <div class="flex items-center justify-center p-2 bg-gray-100 dark:bg-gray-700 rounded-full">
+                  <img 
+                    src={techIcons[tag] || "/icons/technology.svg"} 
+                    alt={tag}
+                    title={tag}
+                    class="w-4 h-4 rounded"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+          
+         
+          <div class="w-full md:w-80 h-56 md:h-56 p-4 order-3 md:order-1">
+            <img 
+              src={project.image} 
+              alt={`Imagen del proyecto ${project.title}`} 
+              class="w-full h-full object-cover rounded-lg border border-gray-200 dark:border-gray-600"
+            />
           </div>
         </div>
       ))}
@@ -84,7 +122,7 @@ const experience = [
       <a 
         href="https://github.com/SalazarWeb" 
         target="_blank"
-        class="btn-primary hover-metallic"
+        class="btn-primary transition-all duration-300 hover:scale-105"
       >
         See more in GitHub
       </a>
