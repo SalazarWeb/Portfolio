@@ -97,6 +97,8 @@ const knowledge = [
 </section>
 
 <style>
+  @import '../styles/flip.css';
+  
   .skill-item {
     display: flex;
     justify-content: center;
@@ -159,6 +161,7 @@ const knowledge = [
   
   .skill-oval:hover .skill-icon {
     opacity: 1;
+    animation: flip 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
   }
   
   .tools-knowledge-block-col {

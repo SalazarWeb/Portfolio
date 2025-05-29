@@ -68,40 +68,39 @@ const skillsArray = ["'HTML'", "'CSS'", "'JavaScript'", "'TypeScript'", "'React'
       skillIndex = (skillIndex + 1) % skillsArray.length;
     }
   }
-  
-  // Funcionalidad de clic para puffOut
-  function handleDemoClick() {
-    const demoContainer = document.getElementById('miniDemo');
+
+  // Función para activar animación foolishIn al hacer clic
+  function activateFoolishAnimation() {
+    const demoContainer = document.getElementById("miniDemo");
     if (demoContainer) {
-      // Remover clase puffIn y agregar puffOut
-      demoContainer.classList.remove('puffIn');
-      demoContainer.classList.add('puffOut');
+      // Remover ambas clases
+      demoContainer.classList.remove("puffIn", "foolishIn");
       
-      // Después de la animación, restaurar el estado inicial
-      setTimeout(() => {
-        demoContainer.classList.remove('puffOut');
-        demoContainer.classList.add('puffIn');
-      }, 800); // Duración de la animación puffOut
+      // Forzar reflow
+      demoContainer.offsetHeight;
+      
+      // Agregar solo la clase foolishIn para la animación de clic
+      demoContainer.classList.add("foolishIn");
     }
   }
   
   // Iniciar animación cuando el DOM esté listo
   document.addEventListener("DOMContentLoaded", function() {
+    // Agregar event listener para el clic
+    const demoContainer = document.getElementById("miniDemo");
+    if (demoContainer) {
+      demoContainer.addEventListener("click", activateFoolishAnimation);
+    }
+    
     setTimeout(animateSkills, 1000);
     setInterval(animateSkills, 1500);
-    
-    // Agregar event listener para el clic
-    const demoContainer = document.getElementById('miniDemo');
-    if (demoContainer) {
-      demoContainer.addEventListener('click', handleDemoClick);
-    }
   });
 </script>
 
 <style>
-  /* Importar Magic CSS */
+  /* Importar ambos CSS */
   @import '../styles/puffIn.css';
-  @import '../styles/puffOut.css';
+  @import '../styles/foolishIn.css';
 
   /* Demo interactivo Mac */
   .demo-container {
