@@ -22,13 +22,15 @@ const tools = [
   'VS Code',
   'Vite',
   'GitHub',
-  'Vercel',
+  'Vercel'
 ];
 
 const knowledge = [
   'Responsive design',
   'Clean code',
   'SCRUM',
+  'UX/UI principles',
+  'SEO best practices',
 ];
 ---
 
@@ -195,12 +197,9 @@ const knowledge = [
     width: 100%;
     text-align: left;
   }
-  .dark .tools-list-col li, .dark .knowledge-list-col li {
-    color: #e2e8f0;
-    background: transparent;
-  }
   .tools-list-col li:hover, .knowledge-list-col li:hover {
     background: #f3f4f6;
+    animation: flip 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
   }
   .dark .tools-list-col li:hover, .dark .knowledge-list-col li:hover {
     background: #2d3748;
