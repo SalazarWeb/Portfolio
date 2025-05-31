@@ -3,106 +3,64 @@ const menuItems = [
   { 
     title: "Experience", 
     path: "#experience", 
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-      <line x1="8" y1="21" x2="16" y2="21"/>
-      <line x1="12" y1="17" x2="12" y2="21"/>
-    </svg>`
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M3 9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm5-2V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m-4 5v.01"/><path d="M3 13a20 20 0 0 0 18 0"/></g></svg>`
   },
   { 
     title: "Skills", 
     path: "#skills", 
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <polygon points="13,2 3,14 12,14 11,22 21,10 12,10"/>
-    </svg>`
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m.586 12l4.95-4.95L6.95 8.464L3.414 12l3.536 3.536l-1.414 1.414zm8.201 8.728l4.486-17.94l1.94.485l-4.485 17.94zm8.263-5.192L20.586 12L17.05 8.464l1.415-1.414l4.95 4.95l-4.95 4.95z"/></svg>`
   },
   { 
     title: "About me", 
     path: "#about", 
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
       <circle cx="12" cy="7" r="4"/>
     </svg>`
   },
-  { 
-    title: "Contact", 
-    path: "#contact", 
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm3.519 0L12 11.671L18.481 6zM20 7.329l-7.341 6.424a1 1 0 0 1-1.318 0L4 7.329V18h16z"/></svg>`
-  },
 ];
 ---
 
-<!-- Desktop Sidebar Navigation -->
-<nav class="hidden lg:flex fixed left-0 top-0 h-full w-64 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border-r border-gray-200 dark:border-gray-700 z-50 transition-all duration-300">
-  <div class="flex flex-col h-full w-full">
-    <div class="flex items-center justify-start h-16 px-4 border-b border-gray-200">
-      <a href="#home" class="text-2xl font-bold text-blue-600">
-        SalazarWeb
-      </a>
-    </div>
-
-    <!-- Navigation Menu -->
-    <div class="flex-1 flex flex-col justify-center">
-      <ul class="space-y-2 px-3">
-        {
-          menuItems.map((item) => (
-            <li>
-              <a
-                href={item.path}
-                class="nav-link group flex items-center justify-start w-full px-3 py-3 text-gray-600 hover:text-blue-600 rounded-lg transition-all duration-300 relative overflow-hidden"
-              >
-                <span class="nav-icon flex items-center justify-center transition-all duration-300" set:html={item.icon}></span>
-                <span class="nav-text ml-3 font-medium transition-all duration-300">{item.title}</span>
-                <div class="nav-underline absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-600 transition-all duration-300 transform -translate-x-1/2"></div>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-
-    <!-- Download CV Button -->
-    <div class="p-4 border-t border-gray-200 dark:border-gray-700">
-      <a
-        href="src/assets/David_Salazar_CV.pdf"
-        download
-        class="download-cv-button flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500 text-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
-      >
-        <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-        </svg>
-        <span>Download CV</span>
-      </a>
-    </div>
-  </div>
-</nav>
-
-<!-- Mobile Bottom Navigation -->
-<nav class="lg:hidden fixed bottom-0 left-0 right-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border-t border-gray-200 dark:border-gray-700 z-50">
-  <div class="flex items-center justify-around px-2 py-2">
-    {
-      menuItems.map((item) => (
-        <a
-          href={item.path}
-          class="mobile-nav-link flex flex-col items-center justify-center p-3 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 rounded-lg min-w-0 flex-1 relative overflow-hidden"
-        >
-          <span class="mobile-nav-icon flex items-center justify-center mb-1 transition-all duration-300" set:html={item.icon}></span>
-          <span class="mobile-nav-text text-xs font-medium truncate transition-all duration-300">{item.title}</span>
-          <div class="mobile-nav-underline absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-600 transition-all duration-300 transform -translate-x-1/2"></div>
+<!-- Universal Top Navigation -->
+<nav class="fixed top-0 left-0 right-0 bg-white border-b border-gray-200 z-50">
+  <div class="flex items-center justify-center px-4 py-4 w-full">
+    <!-- Navegación central con todos los iconos -->
+    <div class="flex items-center justify-center gap-4 relative">
+      <!-- Botón WhatsApp (solo en desktop cuando está visible) -->
+      <div id="navbar-whatsapp" class="opacity-0 transition-opacity duration-300 pointer-events-none">
+        <a href="https://wa.me/5356409338" target="_blank" class="mobile-nav-link navbar-whatsapp-icon flex flex-col items-center justify-center p-3 text-blue-700 hover:text-blue-700 transition-all duration-300 rounded-lg min-w-0 relative overflow-hidden">
+          <span class="mobile-nav-icon flex items-center justify-center w-8 h-8 transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28"/></svg>
+          </span>
+          <div class="mobile-nav-underline absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-600 transition-all duration-300 transform -translate-x-1/2 rounded-full"></div>
         </a>
-      ))
-    }
-    <!-- Download CV Button for Mobile -->
-    <a
-    href="src/assets/David_Salazar_CV.pdf"
-    download
-    class="mobile-nav-link flex flex-col items-center justify-center p-3 text-blue-600 hover:bg-blue-500 hover:text-gray-200 transition-all duration-300 rounded-lg min-w-0 flex-1"
-  >
-    <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-    </svg>
-    <span class="text-xs">CV</span>
-  </a>
+      </div>
+
+      {
+        menuItems.map((item) => (
+          <a
+            href={item.path}
+            class="mobile-nav-link flex flex-col items-center justify-center p-3 text-gray-600 hover:text-blue-600 transition-all duration-300 rounded-lg min-w-0 relative overflow-hidden"
+          > 
+            <span class="mobile-nav-icon flex items-center justify-center w-8 h-8 transition-all duration-300" set:html={item.icon}></span>
+            <div class="mobile-nav-underline absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-600 transition-all duration-300 transform -translate-x-1/2 rounded-full"></div>
+          </a>
+        ))
+      }
+
+      <!-- Botón CV (solo en desktop cuando está visible) -->
+      <div id="navbar-cv" class="opacity-0 transition-opacity duration-300 pointer-events-none">
+        <a href="src/assets/David_Salazar_CV.pdf" download class="mobile-nav-link flex flex-col items-center justify-center p-3 text-gray-600 hover:text-blue-600 transition-all duration-300 rounded-lg min-w-0 relative overflow-hidden">
+          <span class="mobile-nav-icon flex items-center justify-center w-8 h-8 transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2m-5-4v-6"/><path d="M9.5 14.5L12 17l2.5-2.5"/></g></svg>
+          </span>
+          <div class="mobile-nav-underline absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-600 transition-all duration-300 transform -translate-x-1/2 rounded-full"></div>
+        </a>
+      </div>
+
+      <!-- Línea debajo de los iconos con curvatura -->
+      <div class="mobile-nav-bottom-line absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-gray-200 rounded-full transition-all duration-300"></div>
+    </div>
   </div>
 </nav>
 
@@ -126,15 +84,11 @@ const menuItems = [
         const isActive = link.getAttribute('href') === `#${current}`;
         
         // Remove all active classes
-        link.classList.remove('nav-active', 'mobile-nav-active');
+        link.classList.remove('mobile-nav-active');
         
         // Add active class if current
         if (isActive) {
-          if (link.classList.contains('mobile-nav-link')) {
-            link.classList.add('mobile-nav-active');
-          } else {
-            link.classList.add('nav-active');
-          }
+          link.classList.add('mobile-nav-active');
         }
       });
     }
@@ -159,57 +113,70 @@ const menuItems = [
     highlightActiveSection();
   }
 
+  function setupButtonVisibility() {
+    const heroButtonsContainer = document.querySelector('#hero-buttons');
+    const navbarWhatsapp = document.getElementById('navbar-whatsapp');
+    const navbarCv = document.getElementById('navbar-cv');
+
+    if (!heroButtonsContainer || !navbarWhatsapp || !navbarCv) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Los botones del hero están visibles, ocultar los de la navbar
+          navbarWhatsapp.style.opacity = '0';
+          navbarWhatsapp.style.pointerEvents = 'none';
+          navbarCv.style.opacity = '0';
+          navbarCv.style.pointerEvents = 'none';
+        } else {
+          // Los botones del hero no están visibles, mostrar los de la navbar
+          navbarWhatsapp.style.opacity = '1';
+          navbarWhatsapp.style.pointerEvents = 'auto';
+          navbarCv.style.opacity = '1';
+          navbarCv.style.pointerEvents = 'auto';
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '-10px'
+    });
+
+    observer.observe(heroButtonsContainer);
+  }
+
   setupSidebarNavigation();
-  document.addEventListener('astro:page-load', setupSidebarNavigation);
+  setupButtonVisibility();
+  document.addEventListener('astro:page-load', () => {
+    setupSidebarNavigation();
+    setupButtonVisibility();
+  });
 </script>
 
 <style>
-  /* Desktop Navigation Active State */
-  .nav-active {
-    @apply text-blue-600 dark:text-blue-400;
-  }
-
-  .nav-active .nav-icon {
-    transform: scale(1.15);
-    filter: brightness(1.3) drop-shadow(0 0 8px rgba(59, 130, 246, 0.4));
-  }
-
-  .nav-active .nav-text {
-    transform: scale(1.1);
-    font-weight: 600;
-    filter: brightness(1.1);
-    text-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
-  }
-
-  .nav-active .nav-underline {
-    width: 80%;
-    height: 3px;
-    box-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
-    animation: underlineGlow 2s ease-in-out infinite alternate;
-  }
-
   /* Mobile Navigation Active State */
   .mobile-nav-active {
-    @apply text-blue-600 dark:text-blue-400;
+    @apply text-blue-600;
   }
 
   .mobile-nav-active .mobile-nav-icon {
-    transform: scale(1.2);
+    transform: scale(1.3);
     filter: brightness(1.3) drop-shadow(0 0 6px rgba(59, 130, 246, 0.4));
   }
 
-  .mobile-nav-active .mobile-nav-text {
-    transform: scale(1.15);
-    font-weight: 600;
-    filter: brightness(1.2);
-    text-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
-  }
-
   .mobile-nav-active .mobile-nav-underline {
-    width: 70%;
+    width: 32px; /* Ancho ajustado para iconos más grandes */
     height: 2px;
     box-shadow: 0 0 6px rgba(59, 130, 246, 0.6);
-    animation: underlineGlow 2s ease-in-out infinite alternate;
+    animation: underlineGlow 2s ease-in-out alternate;
+    border-radius: 9999px;
+  }
+
+  /* Línea base debajo de los iconos - ajustar para más iconos */
+  .mobile-nav-bottom-line {
+    width: calc(100% - 2rem);
+    max-width: 400px; /* Aumentar para acomodar más iconos */
+    border-radius: 20px;
+    background: linear-gradient(90deg, transparent 0%, rgba(156, 163, 175, 0.3) 10%, rgba(156, 163, 175, 0.6) 50%, rgba(156, 163, 175, 0.3) 90%, transparent 100%);
   }
 
   /* Underline Glow Animation */
@@ -225,64 +192,63 @@ const menuItems = [
   }
 
   /* Hover Effects */
-  .nav-link:hover .nav-icon {
-    transform: scale(1.1);
-    filter: brightness(1.2);
-  }
-
-  .nav-link:hover .nav-text {
-    transform: scale(1.02);
-  }
-
-  .nav-link:hover .nav-underline {
-    width: 60%;
-    height: 2px;
-  }
-
   .mobile-nav-link:hover .mobile-nav-icon {
-    transform: scale(1.15);
+    transform: scale(1.2);
     filter: brightness(1.2);
-  }
-
-  .mobile-nav-link:hover .mobile-nav-text {
-    transform: scale(1.02);
   }
 
   .mobile-nav-link:hover .mobile-nav-underline {
-    width: 50%;
+    width: 32px;
     height: 2px;
+    border-radius: 9999px;
   }
 
-  /* Download CV Button Animations */
-  .download-cv-button {
-    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.25);
-    font-weight: 600;
-    position: relative;
-    overflow: hidden;
+  /* Estilos para los botones de la navbar */
+  .navbar-whatsapp-btn {
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.25);
+    background-color: rgb(59, 130, 246);
+    border-radius: 0.5rem;
   }
 
-  .download-cv-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateX(-100%) skewX(-15deg);
-    transition: transform 0.4s ease;
+  .navbar-whatsapp-btn:hover {
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
   }
 
-  .download-cv-button:hover::before {
-    transform: translateX(100%) skewX(-15deg);
+  .navbar-cv-btn {
+    background-color: transparent;
+    border-radius: 0.5rem;
   }
 
-  .download-cv-button:hover svg {
+  .navbar-cv-btn:hover {
+    border-color: rgba(107, 114, 128, 0.5);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Asegurar consistencia en el tamaño de todos los íconos */
+  .mobile-nav-link {
+    min-width: 56px; /* Mismo ancho para todos */
+    min-height: 56px; /* Misma altura para todos */
+  }
+
+  .mobile-nav-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .navbar-whatsapp-icon:hover .mobile-nav-icon {
     transform: scale(1.2);
+    filter: brightness(1.3) drop-shadow(0 0 8px rgba(59, 130, 246, 0.6));
   }
 
-  .download-cv-button:active {
-    transform: translateY(2px) scale(0.98);
-    box-shadow: 0 2px 3px rgba(59, 130, 246, 0.2);
+  .navbar-whatsapp-icon:hover .mobile-nav-underline {
+    width: 32px;
+    height: 2px;
+    border-radius: 9999px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    nav {
+      @apply bg-gray-900 border-gray-800;
+    }
   }
 </style>

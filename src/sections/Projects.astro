@@ -1,6 +1,4 @@
 ---
-import '../styles/slide.css';
-
 const experience = [
   {
     title: "Pictasino",
@@ -60,7 +58,7 @@ const techIcons: Record<string, string> = {
 };
 ---
 
-<section id="experience" class="section bg-background-secondary lg:ml-64 transition-all duration-300">
+<section id="experience" class="section bg-background-secondary transition-all duration-300">
   <div class="container">
     <div class="text-center mb-16">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Experience</h2>      
@@ -135,28 +133,3 @@ const techIcons: Record<string, string> = {
     </div>
   </div>
 </section>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const projectCards = document.querySelectorAll('.project-card');
-    
-    projectCards.forEach((card) => {
-      let isAnimating = false;
-      
-      card.addEventListener('click', () => { 
-        if (isAnimating) return;
-         
-        isAnimating = true;
-        
-        card.classList.remove('slide');
-        
-        card.classList.add('slide');
-
-        setTimeout(() => {
-          card.classList.remove('slide');
-          isAnimating = false;
-        }, 1200);  
-      });
-    });
-  });
-</script>
