@@ -1,4 +1,4 @@
-<!-- Mini Demo Interactivo Mac -->
+ 
 <div class="demo-container magictime puffIn bg-gray-900 rounded-lg p-4 mb-6 w-full max-w-md shadow-2xl border border-gray-700 cursor-pointer" id="miniDemo">
   <div class="demo-header flex items-center gap-2 mb-3">
     <div class="flex gap-1">
@@ -73,20 +73,20 @@ const skillsArray = ["'HTML'", "'CSS'", "'JavaScript'", "'TypeScript'", "'React'
   function activateFoolishAnimation() {
     const demoContainer = document.getElementById("miniDemo");
     if (demoContainer) {
-      // Remover ambas clases
+       
       demoContainer.classList.remove("puffIn", "foolishIn");
       
-      // Forzar reflow
+       
       demoContainer.offsetHeight;
       
-      // Agregar solo la clase foolishIn para la animación de clic
+       
       demoContainer.classList.add("foolishIn");
     }
   }
   
-  // Iniciar animación cuando el DOM esté listo
+   
   document.addEventListener("DOMContentLoaded", function() {
-    // Agregar event listener para el clic
+     
     const demoContainer = document.getElementById("miniDemo");
     if (demoContainer) {
       demoContainer.addEventListener("click", activateFoolishAnimation);
@@ -98,15 +98,15 @@ const skillsArray = ["'HTML'", "'CSS'", "'JavaScript'", "'TypeScript'", "'React'
 </script>
 
 <style>
-  /* Importar ambos CSS */
+   
   @import '../styles/puffIn.css';
   @import '../styles/foolishIn.css';
 
-  /* Demo interactivo Mac */
+   
   .demo-container {
     transform: perspective(1000px) rotateX(5deg);
     transition: all 0.3s ease;
-    /* Configuración personalizada para la animación magic */
+     
     animation-duration: 1.5s;
     animation-delay: 0.5s;
     animation-fill-mode: both;
