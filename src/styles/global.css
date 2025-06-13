@@ -121,8 +121,76 @@
     transition: transform 0.3s ease;
   }
 
-  .hover-scale:hover {
-    transform: scale(1.05);
+  /* Hover effects solo para dispositivos que soportan hover real */
+  @media (hover: hover) and (pointer: fine) {
+    .hover-scale:hover {
+      transform: scale(1.05);
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-glow);
+    }
+
+    .project-card:hover {
+      box-shadow: var(--shadow-glow);
+      transform: scale(1.02);
+    }
+
+    a:hover {
+      color: var(--accent-primary);
+    }
+
+    .btn-primary:hover {
+      background-color: rgb(var(--accent-primary) / 0.9);
+    }
+
+    .btn-secondary:hover {
+      background-color: rgb(var(--accent-secondary) / 0.9);
+    }
+
+    .footer-link:hover {
+      color: var(--accent-primary);
+    }
+
+    .hover-metallic:hover::before {
+      transform: translateX(100%) skewX(-15deg);
+    }
+  }
+
+  /* Desactivar hover effects en dispositivos táctiles */
+  @media (hover: none) and (pointer: coarse) {
+    .hover-scale:hover {
+      transform: none;
+    }
+
+    .card:hover {
+      box-shadow: none;
+    }
+
+    .project-card:hover {
+      box-shadow: none;
+      transform: none;
+    }
+
+    a:hover {
+      color: inherit;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-primary);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--accent-secondary);
+    }
+
+    .footer-link:hover {
+      color: inherit;
+    }
+
+    .hover-metallic:hover::before {
+      transform: translateX(-100%) skewX(-15deg);
+    }
   }
 
   .slide-up {
@@ -156,9 +224,5 @@
     background: rgba(255, 255, 255, 0.1);
     transform: translateX(-100%) skewX(-15deg);
     transition: transform 0.4s ease;
-  }
-  
-  .hover-metallic:hover::before {
-    transform: translateX(100%) skewX(-15deg);
   }
 }

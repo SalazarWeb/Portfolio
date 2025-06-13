@@ -45,9 +45,7 @@ const knowledge = [
         Technologies
       </h2>
     </div>
-    <!-- Fila inferior: iconos, espacio, tools, knowledge, espacio -->
     <div class="flex flex-col md:flex-row w-full md:items-start">
-      <!-- Skills: 50% -->
       <div class="w-full md:w-[50%]">
         <div class="grid grid-cols-3 gap-3 md:gap-4">
           {skills.map((skill) => (
@@ -60,9 +58,9 @@ const knowledge = [
           ))}
         </div>
       </div>
-      <!-- Espacio en blanco central: 10% -->
+
       <div class="hidden md:block md:w-[10%]"></div>
-      <!-- Tools: 20% -->
+
       <div class="w-full md:w-[20%] flex flex-col tools-knowledge-block-col self-start md:mt-0">
         <h3 class="text-2xl text-gray-700 dark:text-gray-300 font-semibold mb-3 text-primary flex items-center gap-2 justify-center md:justify-start">
           <img src="/icons/tools.svg" alt="Tools Icon" class="w-10 h-10" />
@@ -196,10 +194,6 @@ const knowledge = [
     transition: background 0.2s;
     width: 100%;
     text-align: left;
-  }
-  .tools-list-col li:hover, .knowledge-list-col li:hover {
-    background: #f3f4f6;
-    animation: flip 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
   }
   .dark .tools-list-col li:hover, .dark .knowledge-list-col li:hover {
     background: #2d3748;
