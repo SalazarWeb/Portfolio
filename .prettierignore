@@ -1,0 +1,21 @@
+# Dependencias
+node_modules/
+dist/
+build/
+
+# Archivos generados
+*.log
+*.cache
+
+# Archivos de configuración que no queremos formatear
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Assets
+public/
+*.min.js
+*.min.css
+
+# Archivos específicos de Astro
+.astro/
